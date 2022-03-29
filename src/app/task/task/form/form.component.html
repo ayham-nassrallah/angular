@@ -1,0 +1,29 @@
+<div class="container style-div-2">
+    <form *ngIf="corpForm" [formGroup]="corpForm">
+        <div class="row" *ngFor="let item of corps.controls; let i =index">
+            <form formGroupName="corps">
+                <div class="row">
+                    <div class="col-lg-4 style-div">
+                        {{item.value['corp']}}
+                    </div>
+                    <div class="col-lg-4 style-div-per">
+                        <app-percentage [index]="i" [corp]="item.value['corp']" [value]="item.value['percentage']"
+                            (selectedPercent)="calculatePercentage($event)" [length]="corps.length"></app-percentage>
+                    </div>
+                    <div class="col-lg-4 style-div-per">
+                        <button class=" btn btn-danger delete" mat-button [hidden]="i==0"
+                            (click)="delete(i)">DELETE</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </form>
+    <div class="d-flex justify-content-around">
+        <button class=" btn btn-primary btn-dialog" [disabled]="this.corps.length==4" mat-button
+            (click)="openDialog()">ADD MATERIAL</button>
+    </div>
+</div>
+
+<div>
+    <a href="http://localhost:4200/task/obse">GO To Observalble</a>
+</div>

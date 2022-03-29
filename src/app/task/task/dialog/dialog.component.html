@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Add new material</h2>
+<mat-dialog-content class="mat-typography syl-dialog">
+    <div class="container">
+        <form *ngIf="corpForm" [formGroup]="corpForm">
+            <div class="row ss">
+                <div class="col-sm-6 col-md-6 col-lg-4">
+                    <select class="form-select" aria-label="Default select example" formControlName="corp"
+                        [value]="selectper" required>
+                        <option value="{{item}}" *ngFor="let item of data.options" [value]="item"> {{item}} </option>
+                        <option selected disabled hidden value="">Open this select menu</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <app-percentage [index]="data.length - 1" [value]="corpForm.value['percentage']"
+                        [corp]="corpForm.value['corp']" [length]="data.length" (selectedPercent)="setPercentage($event)"
+                        required></app-percentage>
+                </div>
+            </div>
+            <mat-dialog-actions align="end">
+                <div>
+                    <button class="btn btn-primary btn-1" mat-button (click)="save()">add</button>
+                    <button class="btn btn-danger btn-1" mat-button (click)="closeDialog()">cancel</button>
+                </div>
+            </mat-dialog-actions>
+        </form>
+    </div>
+</mat-dialog-content>

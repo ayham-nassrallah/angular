@@ -1,0 +1,38 @@
+.forms {
+    border: 1px solid black;
+    padding: 32px;
+    margin: 9px;
+    background-color: aliceblue;
+}
+.size{
+    width: 8em;
+    height: 40px;
+    position: relative;
+    left: 6em;
+    top: 1em;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+}
+
+.event{
+    // margin: 5em;
+    padding: 2em;
+    background-color: beige;
+    border: 1px solid black;
+}
+.event-1{
+   
+    background-color: beige;
+    border: 1px solid black;
+}
+
+.style-date{
+    width: 50%;
+    position: relative;
+    left: 24em;
+}

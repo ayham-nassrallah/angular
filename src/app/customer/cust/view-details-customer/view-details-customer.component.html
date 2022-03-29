@@ -1,0 +1,51 @@
+<div class="container d-flex justify-content-between ">
+    <div class="col-sm-12 col-md-12 col col-lg-12  text-center">
+        <h1 class="h1-style">{{title}}</h1>
+    </div>
+</div>
+<div class="container" *ngIf="customerForm">
+    <form [formGroup]="customerForm"  class="form-floating mb-3">
+        <div  class="row g-3 pad-input">
+            <div class="col-sm-12 col-md-12 col-lg-4   ">
+                <label class="style-label text-center">First Name :</label>
+                <input type="text" class="form-control input-style text-uppercase" formControlName="firstName" placeholder="First name" aria-label="First name"
+                    [disabled]="disableInput">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <label class="style-label text-center">Last Name :</label>
+                <input type="text" class="form-control input-style text-uppercase" formControlName="lastName" placeholder="Last name" aria-label="Last name"
+                    [disabled]="disableInput">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <label class="style-label text-center">Phone :</label>
+                <input type="text" class="form-control input-style text-uppercase" formControlName="phone"  placeholder="Phone" aria-label="Phone"
+                    [disabled]="disableInput">
+            </div>
+        </div>
+
+
+        <div class="row g-3 pad-input s">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <label class="style-label text-center">Address :</label>
+                <input type="text" class="form-control input-style text-uppercase" formControlName="addres"  placeholder="addres" aria-label="addres"
+                    [disabled]="disableInput">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <label class="style-label text-center">Email :</label>
+                <input type="text" class="form-control input-style text-uppercase" formControlName="email"  placeholder="Email" aria-label="Email"
+                    [disabled]="disableInput">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <label class="style-label text-center">Balance :</label>
+                <input type="number" class="form-control input-style text-uppercase" formControlName="balance"  placeholder="balance" aria-label="balance"
+                    [disabled]="disableInput">
+            </div>
+            <div class=" text-center div-back">
+                <button type="button" (click)="backToTable()" class="btn btn-primary back">BACK</button>
+            </div>
+            <div class=" text-center" *ngIf="showButton">
+                <button type="button"  (click)="updateCustomer()" class="btn btn-danger back">SAVE</button>
+            </div>
+        </div>
+    </form>
+</div>

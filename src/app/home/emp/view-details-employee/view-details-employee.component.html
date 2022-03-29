@@ -1,0 +1,153 @@
+<section class="container-fluid section-1">
+  <div class="text-center  ">
+    <h1 class="text-danger ">{{title}}</h1>
+  </div>
+</section>
+<section class="container" *ngIf="employeeForm">
+  <form [formGroup]="employeeForm">
+    <div class="row">
+      <div class="col" >
+        <label class="style-label">First Name:</label>
+        <input  type="text"  class="form-control style-input" formControlName="firstName" aria-label="First name" required>  
+        <div class="text-danger valid-div"
+        *ngIf="employeeForm.get( 'firstName' )?.invalid && (employeeForm.get( 'firstName' )?.dirty || employeeForm.get( 'firstName' )?.touched )">
+        <small>*The First name is required</small>
+      </div>
+      </div>
+      <div class="col">
+        <label class="style-label">Last Name:</label>
+        <input type="text" class="form-control style-input" formControlName="lastName" required
+          aria-label="Last name" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'lastName' )?.invalid && (employeeForm.get( 'lastName' )?.dirty || employeeForm.get( 'lastName' )?.touched )" >
+          <small>*The Last name is required</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="style-label">Phone:</label>
+        <input type="text" class="form-control style-input" formControlName="phone" required
+          aria-label="First name" [disabled]="disableInput ">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'phone' )?.invalid && (employeeForm.get( 'phone' )?.dirty || employeeForm.get( 'phone' )?.touched )" >
+          <small>*The Phone required</small>
+        </div>
+        </div>
+
+      <div class="col">
+        <label class="style-label">Addres:</label>
+        <input type="text" class="form-control style-input" formControlName="addres" required
+           aria-label="Last name" [disabled]="disableInput">
+           <div class="text-danger valid-div"
+           *ngIf="employeeForm.get( 'addres' )?.invalid && (employeeForm.get( 'addres' )?.dirty || employeeForm.get( 'addres' )?.touched )" >
+           <small>*The Addres required</small>
+         </div>
+          </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngIf="!create" >
+        <label class="style-label" >User Name:</label>
+        <input type="text"  class="form-control style-input" formControlName="UserName" required
+          aria-label="First name">
+          <div class="text-danger valid-div"
+           *ngIf="employeeForm.get( 'UserName' )?.invalid && (employeeForm.get( 'UserName' )?.dirty || employeeForm.get( 'UserName' )?.touched )" >
+           <small>*The User Name required</small>
+         </div>
+      </div>
+      
+      <div class="col" *ngIf="!create">
+        <label class="style-label">Password:</label>
+        <input type="password" class="form-control style-input" formControlName="Password" required
+          aria-label="Last name" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'Password' )?.invalid && (employeeForm.get( 'Password' )?.dirty || employeeForm.get( 'Password' )?.touched )" >
+          <small>*The Password required</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngIf="!create" >
+        <label class="style-label">Role:</label>
+        <input type="text"  class="form-control style-input" formControlName="Role" required
+          aria-label="First name">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'Role' )?.invalid && (employeeForm.get( 'Role' )?.dirty || employeeForm.get( 'Role' )?.touched )" required>
+          <small>*The Role required</small>
+        </div>
+      </div>
+      <div class="col" *ngIf="!create">
+        <label class="style-label">Gender:</label>
+        <input type="text" class="form-control style-input" formControlName="Gender" required
+          aria-label="Last name" placeholder="Male/Female" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'Gender' )?.invalid && (employeeForm.get( 'Gender' )?.dirty || employeeForm.get( 'Gender' )?.touched )">
+          <small>*The Gender required</small>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col" *ngIf="!create" >
+        <label class="style-label">Employee Salary:</label>
+        <input type="number"  class="form-control style-input" formControlName="EmployeeSalary" required
+          aria-label="First name">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'EmployeeSalary' )?.invalid && (employeeForm.get( 'EmployeeSalary' )?.dirty || employeeForm.get( 'EmployeeSalary' )?.touched )">
+          <small>*The Employee Salary required</small>
+        </div>
+      </div>
+      <div class="col" *ngIf="!create">
+        <label class="style-label">Employee Bounes:</label>
+        <input type="number" class="form-control style-input" formControlName="EmployeeBounes" required
+          aria-label="Last name" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'EmployeeBounes' )?.invalid && (employeeForm.get( 'EmployeeBounes' )?.dirty || employeeForm.get( 'EmployeeBounes' )?.touched )">
+          <small>*The Employee Bounes required</small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" >
+        <label class="style-label">Email:</label>
+        <input type="text" class="form-control style-input" formControlName="email" required
+          aria-label="First name" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'email' )?.invalid && (employeeForm.get( 'email' )?.dirty || employeeForm.get( 'email' )?.touched )">
+          <small>*The Email required</small>
+        </div>
+      </div>
+      <div class="col" *ngIf="create">
+        <label class="style-label" >Salary:</label>
+        <input type="number" class="form-control style-input" formControlName="salary" required
+           aria-label="Last name" [disabled]="disableInput">
+           <div class="text-danger valid-div"
+           *ngIf="employeeForm.get( 'salary' )?.invalid && (employeeForm.get( 'salary' )?.dirty || employeeForm.get( 'salary' )?.touched )">
+           <small>*The Salary required</small>
+         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8  offset-2" *ngIf="create">
+        <label class="style-label">Bounas:</label>
+        <input type="number" class="form-control style-input" formControlName="bounas" required
+          aria-label="First name" [disabled]="disableInput">
+          <div class="text-danger valid-div"
+          *ngIf="employeeForm.get( 'bounas' )?.invalid && (employeeForm.get( 'bounas' )?.dirty || employeeForm.get( 'bounas' )?.touched )">
+          <small>*The Bounas required</small>
+        </div>
+      </div>
+      <div class="col offset-2  ">
+      </div>
+    </div>
+    
+    <div class="text-center back "  *ngIf="showButton">
+      <button (click)="backToTable()" type="button" class="btn btn-danger butt ">Back</button>
+    </div>
+    <div class="text-center back " *ngIf="showButtonSave">
+      <button   (click)="updateEmp()" type="button" class="btn btn-danger butt " >update change</button>
+    </div>
+    <div class="text-center back " *ngIf="createEmpl"> 
+    <button   (click)="createEmp()" type="button" class="btn btn-danger butt " >Create</button>
+  </div>  
+  </form>
+</section>

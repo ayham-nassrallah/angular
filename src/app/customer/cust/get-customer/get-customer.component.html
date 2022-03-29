@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-between ">
+    <div class="col-sm-12 col-md-12 col col-lg-12  text-center">
+        <h1 class="h1-style">Get ALL CUSTOMER</h1>
+        <div class="btn-new">
+            <button type="button" class="btn btn-danger">NEW CUSTOMER</button>
+        </div>
+    </div>
+</div>
+<section class="container">
+    <table class="table-danger">
+        <thead>
+            <tr class="table-primary tr-style ">
+                <th class="table-primary tr-style ">Id</th>
+                <th class="table-primary tr-style">FirstName</th>
+                <th class="table-primary tr-style">LastName</th>
+                <th class="table-primary tr-style">phone</th>
+                <th class="table-primary tr-style">addres</th>
+                <th class="table-primary tr-style">email</th>
+                <th class="table-primary tr-style">balance</th>
+
+                <th class="table-primary tr-style">Action</th>
+            </tr>
+        </thead>
+        <tbody class="tbody-1 tr-style">
+            <tr class="tr-style" *ngFor="let item of getCustomer">
+                <td class="tr-style">{{item.id}}</td>
+                <td class="tr-style">{{item.firstName}}</td>
+                <td class="tr-style">{{item.lastName}}</td>
+                <td class="tr-style">{{item.phone}}</td>
+                <td class="tr-style">{{item.addres}}</td>
+                <td class="tr-style">{{item.email}}</td>
+                <td class="tr-style">{{item.balance}}</td>
+                <td><button type="button" (click)="goToView(item.id)" class="btn btn-primary back-btn-1">View</button> </td>
+                <td> <button type="button" (click)="editeCustomer(item.id)" class="btn btn-danger back-btn-2">Edite</button></td>
+                <td> <button type="button" class="btn btn-danger back-btn-3">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

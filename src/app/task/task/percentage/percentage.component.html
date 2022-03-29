@@ -1,0 +1,9 @@
+<div class="container">
+        <div class="style-div">
+                <h5>chooes percentage</h5>
+                <span class="active " [hidden]="item == 0 && index > 0" *ngFor="let item of per"><input
+                                class="form-check-input input " type="radio" [disabled]="enableAndDisable(item)"
+                                (change)="set($event)" name="inlineRadioOptions" id="inlineRadio3" value="{{item}}"
+                                [checked]="value == item"> {{item}}%</span><br>
+        </div>
+</div>

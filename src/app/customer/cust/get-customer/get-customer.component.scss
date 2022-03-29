@@ -1,0 +1,45 @@
+
+table {
+    width: 100%;
+    background-color: #c6cad4;
+    border: 2px solid red;
+    box-shadow: 0px -6px 12px 17px #787a80;
+   
+}
+
+body {
+
+    padding: 0px;
+    margin: 0px;
+  
+  }
+  .h1-style {
+    padding-bottom: 1em;
+    padding-top: 3em;
+    color: blue;
+    font-family: auto;
+    font-weight: bold;
+  }
+  .btn-new{
+    padding-bottom: 1em;
+  }
+  .back-btn-1 {
+    background-color: green;
+    margin: 4px;
+  }
+  
+  .back-btn-2 {
+    background-color: blue;
+  }
+  .back-btn-3 {
+    background-color: red;
+    margin: 3px;
+  }
+
+  section,table, tbody, td, tfoot, th, thead, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  padding: 1em!important;
+}
+.tr-style{ padding: 1em!important;}

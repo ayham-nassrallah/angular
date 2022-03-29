@@ -1,0 +1,131 @@
+
+<app-navbar >
+  <!-- <a name>im ayham</a> -->
+  <!-- <a  class="btn" [ngClass]="{'showDiv': val1 == 0,'':val2==1}" ></a> -->
+ </app-navbar>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../assets/img/1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/img/2slider(1).jpg" class="d-block w-100" alt="...">
+    </div>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Create Property Binding Form Using [(ngModel)] -->
+<div class="forms">
+  <label>FirstName :</label>
+  <input type="text" [(ngModel)]="name">
+  <h1>{{ name }}</h1>
+</div>
+
+
+
+
+<!-- Create Reactive Form Example with validtion  -->
+
+<div class="container">
+  <form class="forms formGroup" [formGroup]="firstForm" (ngSubmit)="save()">
+    <div class="justify-content-center">
+      <h1 class="text-center ">Example Form</h1>
+    </div>
+    <div class=" formGroup">
+      <label class="col-form-label">FirstName : </label>
+      <input type="text" class="form-control" formControlName="FirstName">
+      <div class="text-danger"
+        *ngIf="firstForm.get( 'FirstName' )?.invalid && (firstForm.get( 'FirstName' )?.dirty || firstForm.get( 'FirstName' )?.touched )">
+        <small>The First name is required</small>
+      </div>
+      <div class="text-danger" *ngIf="firstForm.get('FirstName')?.hasError('minlength')"><small>minLength is 5
+          charachter</small>
+      </div>
+    </div>
+    <div class=" formGroup">
+      <label class="col-form-label">LastName:</label>
+      <input type="text" class="form-control" formControlName="LastName">
+      <div class="text-danger"
+        *ngIf="firstForm.get( 'LastName' )?.invalid && (firstForm.get( 'LastName' )?.dirty || firstForm.get( 'LastName' )?.touched )">
+        <small>The Last name is required</small>
+      </div>
+      <div class="text-danger" *ngIf="firstForm.get('LastName')?.hasError('minlength')"><small>minLength is 5
+          charachter</small>
+      </div>
+    </div>
+
+    <div class=" formGroup">
+      <label class="col-form-label">Email:</label>
+      <input type="text" class="form-control" formControlName="email">
+      <div class="text-danger"
+        *ngIf="firstForm.get( 'email' )?.invalid && (firstForm.get( 'email' )?.dirty || firstForm.get( 'email' )?.touched )">
+        <small>The email is required</small>
+      </div>
+      <div class="text-danger" *ngIf="firstForm.get('email')?.hasError('email')"><small>Email is not correct
+        </small>
+      </div>
+    </div>
+    <button [disabled]="firstForm.invalid" class="btn btn-danger size">save</button>
+  </form>
+</div>
+
+
+
+<!-- Create Event in Input Type -->
+<div class="event container">
+  <button class="btn btn-danger size" (click)="getData($event)">click me</button><br><br>
+  <input type="text" placeholder="keyup" #box1 (keyup)="getData(box1.value )"><br><br>
+  <input type="text" placeholder="keydown" #box2 (keydown)="getData(box2.value )"><br><br>
+  <input type="text" placeholder="mouseleave" #box3 (mouseleave)="getData(box3.value )"><br><br>
+  <input type="text" placeholder="mouseout" #box4 (mouseout)="getData(box4.value )"><br><br>
+  <input type="text" placeholder="mouseover" #box5 (mouseover)="getData(box5.value )"><br><br>
+</div>
+
+
+<div class="event container">
+<h1 class="event-1">{{item1}}</h1>
+<h1 class="event-1">{{item2}}</h1>
+<h1 class="event-1">{{item3}}</h1>
+<h1 class="event-1">{{item4}}</h1>
+</div>
+
+<div class="container">
+  <h1 class="text-center " appStyle> Example Directive </h1>
+</div>
+
+<div class="event container">
+<label for="item-input">Add an item:</label>
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button>
+</div>
+
+
+
+
+
+<form  class="event forms style-date">
+  <div class="container">
+    <p>
+      Umm al-Qura calendar is a type of Hijri calendars based on astronomical calculations and used
+      in Saudi Arabia for administrative purposes
+    </p>
+  </div>
+<ngb-datepicker class="rtl" #dp [(ngModel)]="model" [firstDayOfWeek]="7">
+</ngb-datepicker>
+<hr/>
+<button class="btn btn-sm btn-outline-primary me-2" (click)="selectToday();">Select Today</button>
+<button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo()">To current month</button>
+<button class="btn btn-sm btn-outline-primary me-2" (click)="dp.navigateTo({year: 1434, month: 2})">To Saf. 1434</button>
+<hr/>
+<pre>Date is: {{ model | json }}</pre>
+</form>

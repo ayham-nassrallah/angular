@@ -1,0 +1,58 @@
+.section-1{
+    padding-bottom: 5em;
+    padding-top: 5em;
+}
+.style-input{
+    width: 90%;
+    height: 3em;
+    padding: 34px;
+    margin: 8px;
+    background-color: #c3c3c399;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+  
+}
+form{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    border: 1px solid red;
+    border-radius: 5px 5px 5px 5px;
+}
+.title{
+   
+    border: 1px solid red;
+    border-radius: 5px 5px 5px 5px;
+}
+.style-label{
+    
+        font-size: 30px;
+        margin: 9px;
+        color: #dc3545;
+        font-family: fantasy;
+    
+}
+
+    
+    .back{
+        padding-bottom: 0em;
+        padding-top: 2em;
+    }
+    
+.butt {
+    width: 20em;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.valid-div {
+    font-size: 20px;
+    margin-left: 26px;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+}
